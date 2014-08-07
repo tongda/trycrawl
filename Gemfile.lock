@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    phantomjs (1.9.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  phantomjs (~> 1.9.7.1)
