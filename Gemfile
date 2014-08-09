@@ -2,4 +2,4 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem 'phantomjs', '~> 1.9.7.1'
+gem 'watir', '~> 5.0.0'
