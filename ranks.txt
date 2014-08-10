@@ -1,0 +1,200 @@
+1 $$ Plague Inc. $$ Ndemic Creations
+2 $$ 功夫西游 $$ gou peng
+3 $$ 地狱边境 (LIMBO) $$ Playdead
+4 $$ Modern Combat 5: Blackout $$ Gameloft
+5 $$ Fantashooting $$ Sky Carpenter Digital Entertainment co.ltd
+6 $$ Monument Valley $$ ustwo™
+7 $$ Minecraft – Pocket Edition $$ Mojang
+8 $$ Deemo $$ Rayark Inc.
+9 $$ 战神之怒 $$ WiYun Inc
+10 $$ Fruit Ninja $$ Halfbrick Studios
+11 $$ Micromon $$ Pocket Trend
+12 $$ 仙劍奇俠傳1 DOS懷舊版 $$ SOFTSTAR ENTERTAINMENT INC.
+13 $$ NBA 2K14 $$ 2K
+14 $$ 宝石迷阵 $$ PopCap
+15 $$ Cytus $$ Rayark Inc.
+16 $$ 植物大战僵尸 $$ PopCap
+17 $$ 仙劍奇俠傳5 - 劍傲丹楓 $$ SOFTSTAR ENTERTAINMENT INC.
+18 $$ Kingdom Rush $$ Ironhide Game Studio
+19 $$ Gangstar Vegas $$ Gameloft
+20 $$ PopStar! $$ zplay
+21 $$ 蓝龙岛 $$ NTT Resonant Inc.
+22 $$ PokeGal $$ Alcy
+23 $$ Doodle Jump $$ Lima Sky
+24 $$ 狂斩三国 $$ KooGame
+25 $$ THE KING OF FIGHTERS i 2012 $$ SNK PLAYMORE
+26 $$ FC Road Racing $$ Li Zunxin
+27 $$ MTN $$ David O'Reilly
+28 $$ Classic Brick™ $$ APP Technology Co. Ltd.
+29 $$ THE KING OF FIGHTERS '97 $$ SNK PLAYMORE
+30 $$ RuneMasterPuzzle $$ ATTOMEDIA Corp.
+31 $$ Manuganu 2 $$ ALPER SARIKAYA
+32 $$ Pah! $$ Labgoo Ltd.
+33 $$ 单机三国志 $$ OneOneGames Co., Ltd.
+34 $$ The Treasures of Montezuma 3 $$ Alawar Entertainment, Inc
+35 $$ NinJump Deluxe $$ Backflip Studios
+36 $$ Birzzle Pandora $$ Enfeel Inc.
+37 $$ 一骑当千OL-三国群英手游版 $$ 滨吉 战
+38 $$ Deus Ex: The Fall $$ SQUARE ENIX INC
+39 $$ AirTycoon 3 $$ TRADEGAME Lab Inc.
+40 $$ Plants vs. Zombies $$ PopCap
+41 $$ Doodle God™ $$ JoyBits Ltd.
+42 $$ Oceanhorn ™ $$ FDG Entertainment
+43 $$ 炎龍騎士團2 懷舊版 $$ Soft-World International Corporation
+44 $$ 皇家骑士团（황실 기사단）———最强互动策略战争手游 $$ YoungKing Net Technology Co.,Ltd.
+45 $$ Kingdom Rush Frontiers $$ Ironhide Game Studio
+46 $$ Duet Game $$ Kumobius
+47 $$ Chimpact 2 Family Tree $$ 505 Games (US), Inc.
+48 $$ Rules! $$ TheCodingMonkeys
+49 $$ Shadow Blade $$ Crescent Moon Games
+50 $$ LINEZETA FRONTIER $$ NKOONSTAR
+51 $$ Pah! 2.0 $$ Labgoo Ltd.
+52 $$ Battle Supremacy $$ Atypical Games
+53 $$ Angry Birds Space $$ Rovio Entertainment Ltd
+54 $$ Bad Piggies $$ Rovio Entertainment Ltd
+55 $$ Gangstar Rio: City of Saints $$ Gameloft
+56 $$ Lucky Dragon $$ Mathieu Akita
+57 $$ Time Tangle - Adventure Time $$ Cartoon Network
+58 $$ ArcherCat $$ Cravemob Co.,Ltd
+59 $$ Battleheart Legacy $$ Mika Mobile, Inc.
+60 $$ Riptide GP2 $$ Vector Unit
+61 $$ One Tap RPG - Pachinko-like Dungeon Crawler $$ Arnold Rauers
+62 $$ Mahjong Secrets (Full) $$ Dikobraz Games
+63 $$ STREET FIGHTER IV VOLT $$ CAPCOM
+64 $$ Construction Simulator 2014 $$ astragon Software GmbH
+65 $$ Space Colors $$ Team Chaos LLC
+66 $$ Jacob Jones and the Bigfoot Mystery : Episode 2 $$ Lucid Games
+67 $$ Where's My Water? $$ Disney
+68 $$ Papa's Freezeria To Go! $$ Flipline Studios
+69 $$ 愚公移山 $$ Xiamen Qcplay Digital Technology Co., Ltd.
+70 $$ The Lost City $$ Fire Maple Games
+71 $$ Sky Gamblers: Storm Raiders $$ Atypical Games
+72 $$ F18 Carrier Landing II Pro $$ RORTOS SRL
+73 $$ 80 Days $$ inkle
+74 $$ 軒轅劍參外傳 天之痕 $$ SOFTSTAR ENTERTAINMENT INC.
+75 $$ Tengami $$ Nyamyam
+76 $$ Teenage Mutant Ninja Turtles: Rooftop Run $$ Nickelodeon
+77 $$ Need for Speed™ Most Wanted $$ Electronic Arts
+78 $$ Ninja Village $$ Kairosoft Co.,Ltd
+79 $$ t Chess Lite $$ Tom Kerrigan
+80 $$ Where's My Mickey? $$ Disney
+81 $$ Realistic Kissing Simulator $$ warren ma
+82 $$ Where's My XiYangYang? $$ Disney
+83 $$ STREET FIGHTER X TEKKEN MOBILE $$ CAPCOM
+84 $$ 滑雪大冒险增强版 $$ 游道易Yodo1
+85 $$ Jo's Dream: Coffee Shop $$ Melesta
+86 $$ Year Walk $$ Simogo
+87 $$ THE KING OF FIGHTERS-i- $$ SNK PLAYMORE
+88 $$ Dokuro $$ GungHo Online Entertainment, Inc.
+89 $$ European War 4: Napoleon $$ EASY Inc.
+90 $$ Asphalt 6: Adrenaline $$ Gameloft
+91 $$ The Room Two $$ Fireproof Games
+92 $$ Bridge Constructor $$ Headup Games GmbH & Co KG
+93 $$ Richman 4 fun $$ SOFTSTAR ENTERTAINMENT INC.
+94 $$ Ruse of War $$ Wei Lei
+95 $$ Infinite Flight - Flight Simulator $$ Flying Development Studio LLC
+96 $$ Godfire™ $$ Vivid Games S.A.
+97 $$ Thomas & Friends: Spills & Thrills Game Pack $$ HiT Entertainment
+98 $$ METAL SLUG 3 $$ SNK PLAYMORE
+99 $$ Minigore 2: Zombies $$ Mountain Sheep
+100 $$ MosquitoKiller! $$ Angell Echo
+101 $$ 北京浮生记 $$ Xeecos
+102 $$ METAL SLUG 1 $$ SNK PLAYMORE
+103 $$ Panda GO! $$ Beijing Globallink Computer Technology Co., Ltd.
+104 $$ Trainz Driver - train driving game and realistic railroad simulator $$ N3V Games Pty Ltd
+105 $$ Autumn Dynasty Warlords $$ Touch Dimensions
+106 $$ Papa's Burgeria To Go! $$ Flipline Studios
+107 $$ 매일삼국 $$ sasumko creatives
+108 $$ Flower Board - A fun & addictive line puzzle game (brain relaxing games) $$ Tue Nguyen Minh
+109 $$ 乐动达人 $$ RedAtoms, Inc.
+110 $$ Dr. Panda's Restaurant $$ TribePlay
+111 $$ Assassin's Creed Pirates $$ Ubisoft
+112 $$ Cafeteria Nipponica $$ Kairosoft Co.,Ltd
+113 $$ Cut the Rope $$ Chillingo Ltd
+114 $$ Daddy Was A Thief $$ Cezary Rajkowski
+115 $$ 极品飞车变速 $$ Electronic Arts
+116 $$ Clash of the Olympians $$ Ironhide Game Studio
+117 $$ THE RHYTHM OF FIGHTERS $$ SNK PLAYMORE
+118 $$ The Adventures of Mosaika $$ Fire Maple Games
+119 $$ F1 2011 GAME™ $$ Reliance Big Entertainment UK Private Ltd
+120 $$ Virtua Tennis Challenge $$ SEGA
+121 $$ 仙魔决-2014全民修仙,天天PK,畅快双修,神魔对战刀塔美女,武侠世界唐门王者,全新精品仙侠RPG网游 $$ ruo yang
+122 $$ Angry Birds Star Wars $$ Rovio Entertainment Ltd
+123 $$ LEGO® Friends $$ Warner Bros.
+124 $$ Rayman Fiesta Run $$ Ubisoft
+125 $$ The Dark Knight Rises ™ $$ Gameloft
+126 $$ Audio Ninja $$ BRAINZ SAS
+127 $$ Teenage Mutant Ninja Turtles $$ Nickelodeon
+128 $$ 消灭星星2 $$ PFU
+129 $$ Frontier Heroes – A Planet H game from HISTORY $$ A&E Television Networks Mobile
+130 $$ Sprinkle Islands $$ Mediocre AB
+131 $$ Pacific Rim $$ Reliance Big Entertainment UK Private Ltd
+132 $$ 皇后成长计划2 $$ 4399 Network Inc.
+133 $$ Need for Speed™ Hot Pursuit $$ Electronic Arts
+134 $$ Threes! $$ Sirvo LLC
+135 $$ 画个火柴人 $$ Hitcents.com, Inc.
+136 $$ Driver Mini - Best Mania Cool & Fun Car Parking Game $$ soft5a.com
+137 $$ Machinarium $$ Amanita Design
+138 $$ Temple Run: Oz $$ Disney
+139 $$ Fieldrunners $$ Subatomic Studios, LLC
+140 $$ Sprinkle: Water splashing fire fighting fun! $$ Mediocre AB
+141 $$ Go Game - Tesuji $$ wyz
+142 $$ Quell Reflect+ $$ Fallen Tree Games Ltd
+143 $$ 电影大乱斗 $$ MiYi Game
+144 $$ A Dark Room $$ Amirali Rajan
+145 $$ Turtle Logic $$ Alexandre Minard
+146 $$ Angry Birds $$ Rovio Entertainment Ltd
+147 $$ Soccer Physics $$ Otto-Ville Ojala
+148 $$ The Amazing Spider-Man 2 $$ Gameloft
+149 $$ Modern Combat 4: Zero Hour $$ Gameloft
+150 $$ 热血足球高校篇 $$ tianyi Cheng
+151 $$ Bio Inc. - Biomedical Plague $$ DryGin Studios
+152 $$ 恋舞OL 尊享版 $$ 上海点点乐信息科技有限公司
+153 $$ 师兄快跑 - 史上最难跑酷游戏 $$ Feng Xiaoming
+154 $$ AirFighters Pro Rortos $$ RORTOS SRL
+155 $$ The Great Prank War $$ Cartoon Network
+156 $$ Bongo Touch 3 $$ J P N SOFT
+157 $$ Need For Speed™ Undercover (Chinese) $$ Electronic Arts
+158 $$ Murl the Squirrel $$ Ravenous Games Inc.
+159 $$ Samurai II: Vengeance $$ MADFINGER Games, a.s.
+160 $$ The Secret of Grisly Manor $$ Fire Maple Games
+161 $$ Angry Birds Seasons $$ Rovio Entertainment Ltd
+162 $$ Mirror's Edge™ (Intl.) $$ Electronic Arts
+163 $$ TETRIS® $$ Electronic Arts
+164 $$ Muffin Knight $$ Angry Mob Games
+165 $$ Ready Steady Bang $$ Hover Studio Limited
+166 $$ Osmos $$ Hemisphere Games
+167 $$ Real Steel $$ Reliance Big Entertainment UK Private Ltd
+168 $$ KAMI $$ State of Play Games
+169 $$ LEGO ® Marvel ™ Super Heroes: Universe in Peril $$ Warner Bros.
+170 $$ 萌忍Q传 $$ mengying jiang
+171 $$ 辉煌足球 $$ MicroGame
+172 $$ Fighting of Sango: Legend of Heroes $$ im2.0
+173 $$ STREET FIGHTER IV $$ CAPCOM
+174 $$ Tower Defense® $$ Com2uS USA, Inc.
+175 $$ Resident Evil 4: PLATINUM $$ CAPCOM
+176 $$ Bridge Constructor Medieval $$ Headup Games GmbH & Co KG
+177 $$ Death Rally $$ Remedy Entertainment Ltd.
+178 $$ Game Dev Story $$ Kairosoft Co.,Ltd
+179 $$ FINAL FANTASY VI $$ SQUARE ENIX INC
+180 $$ LEGO Harry Potter: Years 5-7 $$ Warner Bros.
+181 $$ About Love, Hate and the other ones $$ Black Pants Studio GmbH
+182 $$ Super Badminton $$ ROLOCULE GAMES PRIVATE LIMITED
+183 $$ Ticket to Ride Pocket $$ Days Of Wonder, Inc.
+184 $$ 疯狂填字Live版 $$ GPWZW.COM
+185 $$ Moon Swing $$ INTERUSH INC.
+186 $$ Skipping NYAN-P $$ PSOFT
+187 $$ Nimian Legends : BrightRidge $$ Robert Kabwe
+188 $$ Bridge Construction Pro $$ ekazaam
+189 $$ RCK $$ Aleksus
+190 $$ Rush of Rune $$ manchui
+191 $$ Darkmoor Manor Paid Version $$ InertiaSoft
+192 $$ The Amazing Spider-Man $$ Gameloft
+193 $$ rymdkapsel $$ webbfarbror AB
+194 $$ Marvel Pinball $$ ZEN Studios Ltd.
+195 $$ Fieldrunners 2 $$ Subatomic Studios, LLC
+196 $$ iSlash $$ Duello
+197 $$ Ski Safari $$ Defiant Development
+198 $$ Gesundheit!™ $$ Revolutionary Concepts
+199 $$ Secret of Mana $$ SQUARE ENIX INC
+200 $$ Dungeon Hunter 2 $$ Gameloft
