@@ -1,51 +1,21 @@
 #encoding=UTF-8
 
-require 'watir-webdriver'
+require_relative 'qidian_mapper'
 require 'date'
 
-class QidianMonthMapper
+class QidianMonthMapper < QidianMapper
 
-  attr_accessor :browser
+  # attr_accessor :browser
 
   attr_reader :books
 
   attr_writer :max_per_month
 
   def initialize
-    @browser = Watir::Browser.new :phantomjs
+    # @browser = Watir::Browser.new :phantomjs
+    super
     @books = []
     @max_per_month = 2000
-  end
-
-  def map_row(row)
-    book = {
-      :rank => row.tds[0].text,
-      :category => row.tds[1].a.text,
-      :name => row.tds[2].a.text,
-      :month_votes => row.tds[3].text,
-      :author => row.tds[4].a.text,
-      :update_time => row.tds[5].text,
-      :url => row.tds[2].a.href
-    }
-  end
-
-  def map_page(url)
-    mapped_books = []
-
-    begin
-      @browser.goto url
-      @browser.table(:id => "textlist").trs[1..-1].each do |row|
-        mapped_books.push map_row(row)
-        # puts map_row(row)
-      end
-      puts "get #{mapped_books.size} items"
-    rescue Exception => e
-      puts e.message
-      puts "retrying"
-      mapped_books = map_page(url)
-    end
-
-    mapped_books
   end
 
   def map_month(url_base)
@@ -99,13 +69,13 @@ class QidianMonthMapper
 end
 
 mapper = QidianMonthMapper.new
-mapper.max_per_month = 100
+mapper.max_per_month = 50
 
 puts mapper.browser
 
 mapper.map_range(Date.new(2014, 8), Date.new(2014, 9))
 
-File.open("qidian.txt", "w") do |file|
+File.open("qidian.month.txt", "w") do |file|
   mapper.books.each do |book|
     file.puts "#{book[:month]} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:url]}"
   end
@@ -113,9 +83,9 @@ end
 
 mapper.gen_lvs
 
-File.open("qidian.all.txt", "w") do |file|
+File.open("qidian.month.all.txt", "w") do |file|
   mapper.books.each do |book|
-    file.puts "#{book[:month]} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:lv]} $$ #{book[:url]}"
+    file.puts "#{book[:month].strftime "%Y%m"} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:lv]} $$ #{book[:url]}"
   end
 end
 

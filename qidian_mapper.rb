@@ -1,0 +1,34 @@
+require_relative 'base_mapper'
+
+class QidianMapper < BaseMapper
+  def map_row(row)
+    book = {
+      :rank => row.tds[0].text,
+      :category => row.tds[1].a.text,
+      :name => row.tds[2].a.text,
+      :month_votes => row.tds[3].text,
+      :author => row.tds[4].a.text,
+      :update_time => row.tds[5].text,
+      :url => row.tds[2].a.href
+    }
+  end
+
+  def map_page(url)
+    mapped_books = []
+
+    begin
+      @browser.goto url
+      @browser.table(:id => "textlist").trs[1..-1].each do |row|
+        mapped_books.push map_row(row)
+        # puts map_row(row)
+      end
+      puts "get #{mapped_books.size} items"
+    rescue Exception => e
+      puts e.message
+      puts "retrying"
+      mapped_books = map_page(url)
+    end
+
+    mapped_books
+  end
+end
