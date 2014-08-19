@@ -3,7 +3,7 @@
 require 'watir-webdriver'
 require 'date'
 
-class QidianMapper
+class QidianMonthMapper
 
   attr_accessor :browser
 
@@ -98,7 +98,7 @@ class QidianMapper
   end
 end
 
-mapper = QidianMapper.new
+mapper = QidianMonthMapper.new
 mapper.max_per_month = 100
 
 puts mapper.browser
