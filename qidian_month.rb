@@ -30,7 +30,7 @@ class QidianMonthMapper < QidianMapper
       puts "page #{index} finished"
 
       index += 1
-      break if books_in_page.size < 50 || books_in_month.size >= @max_per_month
+      break if books_in_page.size == 0 || books_in_month.size >= @max_per_month
     end
     books_in_month
   end

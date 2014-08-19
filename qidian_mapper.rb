@@ -18,9 +18,11 @@ class QidianMapper < BaseMapper
 
     begin
       @browser.goto url
-      @browser.table(:id => "textlist").trs[1..-1].each do |row|
-        mapped_books.push map_row(row)
-        # puts map_row(row)
+      if @browser.table(:id => "textlist").trs.size > 1
+        @browser.table(:id => "textlist").trs[1..-1].each do |row|
+          mapped_books.push map_row(row)
+          # puts map_row(row)
+        end
       end
       puts "get #{mapped_books.size} items"
     rescue Exception => e
