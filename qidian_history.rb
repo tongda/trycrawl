@@ -30,16 +30,20 @@ class QidianMapper
   end
 
   def map_page(url)
-    @browser.goto url
-
     mapped_books = []
 
-    @browser.table(:id => "textlist").trs[1..-1].each do |row|
-      mapped_books.push map_row(row)
-      # puts map_row(row)
+    begin
+      @browser.goto url
+      @browser.table(:id => "textlist").trs[1..-1].each do |row|
+        mapped_books.push map_row(row)
+        # puts map_row(row)
+      end
+      puts "get #{mapped_books.size} items"
+    rescue Exception => e
+      puts e.message
+      puts "retrying"
+      mapped_books = map_page(url)
     end
-
-    puts "get #{mapped_books.size} items"
 
     mapped_books
   end
@@ -58,6 +62,7 @@ class QidianMapper
       index += 1
       break if books_in_page.size < 50 || books_in_month.size >= @max_per_month
     end
+    books_in_month
   end
 
   def map_range(from, to)
@@ -67,25 +72,50 @@ class QidianMapper
       books.each do |book|
         book[:month] = from
       end
-      @books += books_in_month
+      @books += books
 
-      puts "month #{from} has finished, #{books_in_range} founded"
+      puts "month #{from} has finished, #{books.size} found"
 
       from = from.next_month
+    end
+  end
+
+  def lv_for(book)
+    begin
+      @browser.goto book[:url]
+      book[:lv] = @browser.div(:class => "title").img.title
+    rescue Exception => e
+      puts e.message
+      puts "retrying"
+      lv_for book
+    end
+  end
+
+  def gen_lvs
+    @books.each do |book|
+      lv_for book
     end
   end
 end
 
 mapper = QidianMapper.new
-mapper.max_per_month = 200
+mapper.max_per_month = 100
 
 puts mapper.browser
 
-mapper.map_range(Date.new(2014, 7), Date.new(2014, 9))
+mapper.map_range(Date.new(2014, 8), Date.new(2014, 9))
 
 File.open("qidian.txt", "w") do |file|
   mapper.books.each do |book|
-    file.puts "#{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:url]}"
+    file.puts "#{book[:month]} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:url]}"
+  end
+end
+
+mapper.gen_lvs
+
+File.open("qidian.all.txt", "w") do |file|
+  mapper.books.each do |book|
+    file.puts "#{book[:month]} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:lv]} $$ #{book[:url]}"
   end
 end
 
