@@ -9,6 +9,7 @@ GEM
     commonwatir (4.0.0)
     ffi (1.9.3)
     multi_json (1.10.1)
+    phantomjs (1.9.7.1)
     rubyzip (1.1.6)
     selenium-webdriver (2.42.0)
       childprocess (>= 0.5.0)
@@ -27,4 +28,5 @@ PLATFORMS
 
 DEPENDENCIES
   bunny (~> 1.4.0)
+  phantomjs (~> 1.9.7.1)
   watir (~> 5.0.0)
