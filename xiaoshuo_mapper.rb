@@ -4,10 +4,11 @@ class XiaoshuoMapper < BaseMapper
   attr_accessor :page_handler
 
   def map_row(row)
+    puts row.ths[1].text
     {
       rank: row.ths[0].text,
       name: row.ths[1].text,
-      url: row.ths[1].link.href,
+      url: row.ths[1].a.href,
       author: row.tds[0].text,
       type: row.tds[1].text,
       state: row.tds[2].text,
@@ -21,7 +22,8 @@ class XiaoshuoMapper < BaseMapper
     begin
       @browser.goto url
       if @browser.div(:id => 'views_con_1').present?
-        @browser.div(:id => 'views_con_1').trs.each do |row|
+        @browser.div(:id => 'views_con_1').tbody.trs.each do |row|
+          puts row
           if row.ths.size > 0
             mapped_books.push map_row(row)
           end
@@ -31,7 +33,8 @@ class XiaoshuoMapper < BaseMapper
     rescue Exception => e
       puts e.message
       puts "retrying"
-      mapped_books = map_page(url)
+      mapped_books = map_page(url) do |book|
+      end
     end
 
     mapped_books.each do |book|

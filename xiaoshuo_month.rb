@@ -2,6 +2,7 @@ require_relative 'xiaoshuo_mapper'
 
 class XiaoshuoMonthMapper < XiaoshuoMapper
   attr_writer :max_per_month
+  attr_accessor :month_from
 
   def initialize
     super
@@ -14,7 +15,10 @@ class XiaoshuoMonthMapper < XiaoshuoMapper
     loop do
       url = "#{url_base}#{index}.html"
 
-      books_in_page = map_page url
+      books_in_page = map_page url do |book|
+        book[:month] = @month_from
+      end
+
       books_in_month += books_in_page
 
       puts "page #{index} finished"
@@ -27,16 +31,15 @@ class XiaoshuoMonthMapper < XiaoshuoMapper
 
   def map_range(from, to)
     puts from
+    @month_from = from
     puts to
-    while from < to do
+    while @month_from < to do
       url_base = "http://a.readnovel.com/topall/goldmedal/#{from.strftime '%Y%m'}/"
 
-      books = map_month url_base do |book|
-        book[:month] = from
-      end
+      books = map_month url_base
 
       puts "month #{from} has finished, #{books.size} found"
-      from = from.next_month
+      @month_from = @month_from.next_month
     end
   end
 
