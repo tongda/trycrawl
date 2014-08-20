@@ -9,12 +9,12 @@ mapper.page_handler = Proc.new do |books|
     mapper.detail_for book
     File.open(file_name, 'a') do |file|
       if book[:detail]
-        file.puts "#{book[:month]} $$ #{book[:rank]} $$ \
+        file.puts "#{book[:month].strftime '%Y%m'} $$ #{book[:rank]} $$ \
         #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ \
         #{book[:update_time]} $$ #{book[:url]} $$ \
         #{book[:detail][:words]} $$ #{book[:detail][:reads]} $$ #{book[:detail][:favourites]}"
       else
-        file.puts "#{book[:month]} $$ #{book[:rank]} $$ \
+        file.puts "#{book[:month].strftime '%Y%m'} $$ #{book[:rank]} $$ \
         #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ \
         #{book[:update_time]} $$ #{book[:url]} $$"
       end
