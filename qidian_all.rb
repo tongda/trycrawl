@@ -1,3 +1,5 @@
+#encoding=UTF-8
+
 require_relative 'qidian_mapper'
 
 class QidianAllMapper < QidianMapper
@@ -50,37 +52,42 @@ class QidianAllMapper < QidianMapper
     end
   end
 
-  def gen_details
+  def gen_details(&block)
     @books.each do |book|
       detail_for book
+
+      if block
+        block.call book
+      end
+    end
+  end
+
+  def parse_book(line)
+    phrases = line.split "$$"
+    if phrases.size > 0
+      return {
+        rank: phrases[0].strip,
+        category: phrases[1].strip,
+        name: phrases[2].strip,
+        month_votes: phrases[3].strip,
+        author: phrases[4].strip,
+        update_time: phrases[5].strip,
+        url: phrases[6].strip
+      }
+    end
+  end
+
+  def parse_books
+    File.open("qidian.all.txt", "r:utf-8") do |file|
+      file.each_line do |line|
+        book = parse_book line
+
+        if book[:rank] % 100 == 0
+          puts "#{book[:rank]} completed"
+        end
+
+        @books.push book if book
+      end
     end
   end
 end
-
-mapper = QidianAllMapper.new
-mapper.top = 100
-
-puts mapper.browser
-
-mapper.map_all
-
-File.open("qidian.all.txt", "w") do |file|
-  mapper.books.each do |book|
-    file.puts "#{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:url]}"
-  end
-end
-
-mapper.gen_details
-
-File.open("qidian.all.all.txt", "w") do |file|
-  mapper.books.each do |book|
-    file.puts "#{book[:rank]} $$ #{book[:category]} $$ \
-    #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ \
-    #{book[:update_time]} $$ #{book[:lv]} $$ #{book[:url]} $$ \
-    #{book[:detail][:quality]} $$ #{book[:detail][:total_hit]} $$ #{book[:detail][:month_hit]} $$ \
-    #{book[:detail][:week_hit]} $$ #{book[:detail][:total_recommand]} $$ #{book[:detail][:month_recommand]} $$ \
-    #{book[:detail][:week_recommand]} $$ #{book[:detail][:word_completed]}"
-  end
-end
-
-mapper.browser.close

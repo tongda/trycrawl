@@ -1,3 +1,5 @@
+#encoding=UTF-8
+
 require_relative 'base_mapper'
 
 class QidianMapper < BaseMapper
