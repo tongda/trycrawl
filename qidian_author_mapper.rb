@@ -13,9 +13,7 @@ end
 File.open("qidian.month.txt", "r:utf-8") do |file|
   file.each_line do |line|
     author = from_line line
-    unless authors.has_key? author[:name]
-      authors[author[:name]] = author[:url]
-    end
+    authors[author[:name]] = author[:url]
   end
 end
 
