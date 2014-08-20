@@ -10,7 +10,8 @@ class HongxiuMapper < BaseMapper
       author: row.lis[2].text,
       month_votes: row.lis[4].text,
       update_time: row.lis[5].text,
-      url: row.lis[1].link.href
+      url: row.lis[1].link.href,
+      auth_url: row.lis[2].link.href
     }
   end
 
