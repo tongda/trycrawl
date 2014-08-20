@@ -2,11 +2,11 @@ require_relative 'hongxiu_mapper'
 
 class HongxiuAllMapper < HongxiuMapper
   def map_all
-    url_base = "http://top.hongxiu.com/rqwb.html"
-    map_page url_base
+    url = "http://top.hongxiu.com/rqwb.html"
+    map_page url
 
     (2...8).each do |i|
-      url = "#{url_base}#{i}"
+      url = "http://top.hongxiu.com/rqwb#{i}.html"
       map_page url
     end
   end
