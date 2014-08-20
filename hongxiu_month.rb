@@ -8,8 +8,7 @@ class HongxiuMonthMapper < HongxiuMapper
     while from < to do
       url = "http://top.hongxiu.com/his#{from.strftime '%Y%m'}.html"
 
-      books = map_page url
-      books.each do |book|
+      books = map_page url do |book|
         book[:month] = from
       end
 

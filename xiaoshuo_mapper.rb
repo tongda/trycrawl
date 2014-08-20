@@ -18,9 +18,11 @@ class XiaoshuoMapper < BaseMapper
     mapped_books = []
     begin
       @browser.goto url
-      if @browser.div(:id => 'lbox').present?
-        @browser.div(:id => 'lbox').uls.each do |row|
-          mapped_books.push map_row(row)
+      if @browser.div(:id => 'views_con_1').present?
+        @browser.div(:id => 'views_con_1').trs.each do |row|
+          if tr.ths.size > 0
+            mapped_books.push map_row(row)
+          end
         end
       end
       puts "get #{mapped_books.size} items"
