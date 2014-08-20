@@ -32,6 +32,7 @@ class HongxiuMonthMapper < HongxiuMapper
       puts e.message
       puts "retrying"
       if times < 5
+        reset
         detail_for book, times + 1
       else
         File.open("hongxiu.given_up.txt", "a") do |file|

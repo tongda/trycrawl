@@ -31,8 +31,7 @@ class XiaoshuoMonthMapper < XiaoshuoMapper
     while from < to do
       url_base = "http://a.readnovel.com/topall/goldmedal/#{from.strftime '%Y%m'}/"
 
-      books = map_month url_base
-      books.each do |book|
+      books = map_month url_base do |book|
         book[:month] = from
       end
 

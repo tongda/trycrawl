@@ -32,6 +32,10 @@ class XiaoshuoMapper < BaseMapper
       mapped_books = map_page(url)
     end
 
+    mapped_books.each do |book|
+      yield book
+    end
+
     if @page_handler
       puts "going to process page"
       @page_handler.call mapped_books
