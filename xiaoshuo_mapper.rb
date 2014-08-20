@@ -1,6 +1,8 @@
 require_relative 'base_mapper'
 
 class XiaoshuoMapper < BaseMapper
+  attr_accessor :page_handler
+
   def map_row(row)
     {
       rank: row.ths[0].text,
@@ -20,7 +22,7 @@ class XiaoshuoMapper < BaseMapper
       @browser.goto url
       if @browser.div(:id => 'views_con_1').present?
         @browser.div(:id => 'views_con_1').trs.each do |row|
-          if tr.ths.size > 0
+          if row.ths.size > 0
             mapped_books.push map_row(row)
           end
         end
