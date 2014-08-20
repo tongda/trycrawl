@@ -3,8 +3,10 @@
 require_relative 'base_mapper'
 
 class QidianMapper < BaseMapper
+  attr_accessor :page_handler
+
   def map_row(row)
-    book = {
+    {
       :rank => row.tds[0].text,
       :category => row.tds[1].a.text,
       :name => row.tds[2].a.text,
@@ -31,6 +33,12 @@ class QidianMapper < BaseMapper
       puts e.message
       puts "retrying"
       mapped_books = map_page(url)
+    end
+
+    if @page_handler
+      puts "going to process page"
+      @page_handler.call mapped_books
+      puts "page processed"
     end
 
     mapped_books

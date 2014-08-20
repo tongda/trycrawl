@@ -27,7 +27,7 @@ class QidianAllMapper < QidianMapper
     end
   end
 
-  def detail_for(book)
+  def detail_for(book, times = 0)
     begin
       @browser.goto book[:url]
       book[:lv] = @browser.div(:class => "title").img.title
@@ -48,7 +48,14 @@ class QidianAllMapper < QidianMapper
     rescue Exception => e
       puts e.message
       puts "retrying"
-      detail_for book
+      if times < 5
+        detail_for book, times + 1
+      else
+        File.open("given_up.txt", "a") do |file|
+          file.puts "#{book[:name]} $$ #{book[:url]}"
+        end
+        puts "#{book[:url]} has been tried 5 times, give up."
+      end
     end
   end
 

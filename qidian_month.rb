@@ -12,7 +12,6 @@ class QidianMonthMapper < QidianMapper
   attr_writer :max_per_month
 
   def initialize
-    # @browser = Watir::Browser.new :phantomjs
     super
     @books = []
     @max_per_month = 2000
