@@ -18,24 +18,27 @@ File.open("qidian.month.txt", "r:utf-8") do |file|
 end
 
 def lv_for(url, times = 0)
+  browser = Watir::Browser.new :phantomjs
   begin
-    browser = Watir::Browser.new :phantomjs
     browser.goto url
     lv = browser.div(:class => "title").img.title
-    browser.close
+
     return lv
   rescue Exception => e
     puts e.message
     puts "retrying"
     if times < 5
+      browser.close
       return lv_for(url, times + 1)
     else
       puts "give up"
-      File.open("authors.given_up.txt", "w") do |file|
+      File.open("authors.given_up.txt", "a") do |file|
         file.puts url
       end
       return nil
     end
+  else
+    browser.close
   end
 end
 
