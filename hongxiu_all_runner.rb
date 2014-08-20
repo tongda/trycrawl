@@ -11,13 +11,13 @@ mapper.page_handler = Proc.new do |books|
 
       if book[:detail]
         file.puts "#{book[:month]} $$ #{book[:rank]} $$ \
-        #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ \
-        #{book[:update_time]} $$ #{book[:url]} $$ \
-        #{book[:detail][:publis]} $$ #{book[:auth_url]} $$ #{book[:detail][:write]}"
+        #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:property]} $$ #{book[:author]} $$ \
+        #{book[:read]} $$ #{book[:update_time]} $$ #{book[:url]} $$ #{book[:auth_url]} $$ \
+        #{book[:detail][:publish]} $$ #{book[:detail][:write]}"
       else
         file.puts "#{book[:month]} $$ #{book[:rank]} $$ \
-        #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ \
-        #{book[:update_time]} $$ #{book[:url]} $$ #{book[:auth_url]}"
+        #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:property]} $$ #{book[:author]} $$ \
+        #{book[:read]} $$ #{book[:update_time]} $$ #{book[:url]} $$ #{book[:auth_url]}"
       end
     end
   end

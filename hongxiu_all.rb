@@ -5,7 +5,7 @@ class HongxiuAllMapper < HongxiuMapper
     url = "http://top.hongxiu.com/rqwb.html"
     map_page url
 
-    (2...8).each do |i|
+    (2..8).each do |i|
       url = "http://top.hongxiu.com/rqwb#{i}.html"
       map_page url
     end
