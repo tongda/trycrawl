@@ -22,6 +22,6 @@ mapper.page_handler = Proc.new do |books|
   end
 end
 
-mapper.map_range(Date.new(2014, 1), Date.new(2014, 3))
+mapper.map_range(Date.new(2010, 7), Date.new(2014, 3))
 
 mapper.browser.close
