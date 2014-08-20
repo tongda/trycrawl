@@ -49,15 +49,24 @@ class QidianMonthMapper < QidianMapper
     end
   end
 
-  def lv_for(book)
+  def lv_for(book, times = 0)
     begin
       @browser.goto book[:url]
       book[:lv] = @browser.div(:class => "title").img.title
     rescue Exception => e
       puts e.message
       puts "retrying"
-      lv_for book
+      if times < 5
+        lv_for book, times + 1
+      else
+        File.open("given_up.txt", "a") do |file|
+          file.puts "#{book[:name]} $$ #{book[:url]}"
+        end
+        puts "#{book[:url]} has been tried 5 times, give up."
+      end
     end
+
+    reset
   end
 
   def gen_lvs
@@ -65,27 +74,30 @@ class QidianMonthMapper < QidianMapper
       lv_for book
     end
   end
-end
 
-mapper = QidianMonthMapper.new
-mapper.max_per_month = 50
+  def parse_book(line)
+    phrases = line.split "$$"
+    if phrases.size > 0
+      return {
+        month: Date.parse(phrases[0]),
+        rank: phrases[1].strip,
+        category: phrases[2].strip,
+        name: phrases[3].strip,
+        month_votes: phrases[4].strip,
+        author: phrases[5].strip,
+        update_time: phrases[6].strip,
+        url: phrases[7].strip
+      }
+    end
+  end
 
-puts mapper.browser
+  def parse_books
+    File.open("qidian.month.txt", "r:utf-8") do |file|
+      file.each_line do |line|
+        book = parse_book line
 
-mapper.map_range(Date.new(2014, 8), Date.new(2014, 9))
-
-File.open("qidian.month.txt", "w") do |file|
-  mapper.books.each do |book|
-    file.puts "#{book[:month]} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:url]}"
+        @books.push book if book
+      end
+    end
   end
 end
-
-mapper.gen_lvs
-
-File.open("qidian.month.all.txt", "w") do |file|
-  mapper.books.each do |book|
-    file.puts "#{book[:month].strftime "%Y%m"} $$ #{book[:rank]} $$ #{book[:category]} $$ #{book[:name]} $$ #{book[:month_votes]} $$ #{book[:author]} $$ #{book[:update_time]} $$ #{book[:lv]} $$ #{book[:url]}"
-  end
-end
-
-mapper.browser.close

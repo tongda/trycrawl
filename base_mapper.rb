@@ -8,4 +8,9 @@ class BaseMapper
   def initialize
     @browser = Watir::Browser.new :phantomjs
   end
+
+  def reset
+    @browser.close
+    @browser = Watir::Browser.new :phantomjs
+  end
 end

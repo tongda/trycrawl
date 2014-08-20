@@ -41,6 +41,8 @@ class QidianMapper < BaseMapper
       puts "page processed"
     end
 
+    reset
+    
     mapped_books
   end
 end
