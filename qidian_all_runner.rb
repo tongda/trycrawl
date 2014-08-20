@@ -3,7 +3,7 @@
 require_relative 'qidian_all.rb'
 require 'date'
 
-file_name = "qidian.all.txt#{Date.now}"
+file_name = "qidian.all.#{DateTime.now.strftime('%s')}.txt"
 
 mapper = QidianAllMapper.new
 mapper.top = 100
