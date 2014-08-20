@@ -6,6 +6,6 @@ class BaseMapper
   attr_accessor :browser
 
   def initialize
-    @browser = Watir::Browser.new :firefox
+    @browser = Watir::Browser.new :phantomjs
   end
 end
