@@ -6,7 +6,7 @@ file_name = "xiaoshuo.month.#{DateTime.now.strftime('%s')}.txt"
 
 mapper.page_handler = Proc.new do |books|
   books.each do |book|
-    mapper.detail_for book
+    # mapper.detail_for book
     File.open(file_name, 'a') do |file|
       if book[:detail]
         file.puts "#{book[:month].strftime '%Y%m'} $$ #{book[:rank]} $$ \
@@ -22,6 +22,8 @@ mapper.page_handler = Proc.new do |books|
   end
 end
 
-mapper.map_range(Date.new(2010, 3), Date.new(2014, 9))
+mapper.browser.goto "http://www.readnovel.com"
+
+mapper.map_range(Date.new(2010, 3), Date.new(2010, 4))
 
 mapper.browser.close
