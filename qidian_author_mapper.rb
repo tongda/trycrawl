@@ -43,7 +43,6 @@ end
 puts "#{authors.size} authors found"
 
 lvs = {}
-current_authors = []
 File.open("qidian_top_5000.csv", "r:utf-8") do |file|
   file.each_line do |line|
     phrases = line.split ","
@@ -52,12 +51,11 @@ File.open("qidian_top_5000.csv", "r:utf-8") do |file|
       url: phrases[7].strip,
       lv: phrases[6].strip
     }
-    current_authors.push author
     lvs[author[:name]] = author[:lv]
   end
 end
 
-puts "#{current_authors.size} authors exists"
+puts "#{lvs.size} authors exists"
 
 File.open("qidian.author.lv.txt", "w") do |file|
   authors.each do |name, url|
