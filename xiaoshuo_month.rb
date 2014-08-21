@@ -57,7 +57,7 @@ class XiaoshuoMonthMapper < XiaoshuoMapper
     rescue Exception => e
       puts e.message
       puts "retrying"
-      if times < 5
+      if times < 2
         detail_for book, times + 1
       else
         File.open("hongxiu.given_up.txt", "a") do |file|
