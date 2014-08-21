@@ -22,8 +22,11 @@ end
 def lv_for(browser, url, times = 0)
   begin
     browser.goto url
-    lv = browser.div(:class => "title").img.title
-
+    if browser.div(:class => "title").img.present?
+      lv = browser.div(:class => "title").img.title
+    else
+      lv = "无等级"
+    end
     return lv
   rescue Exception => e
     puts e.message
