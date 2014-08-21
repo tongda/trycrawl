@@ -50,7 +50,7 @@ File.open("qidian.author.lv.txt", "w") do |file|
     lvs[name] = lv_for browser, url
     browser.close
     puts "#{name} #{lvs[name]}"
-    file.puts "#{name} #{lvs[name]}"
+    file.puts "#{name} $$ #{lvs[name]}"
   end
 end
 
