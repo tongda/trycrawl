@@ -22,10 +22,11 @@ class XiaoshuoMapper < BaseMapper
     begin
       @browser.goto url
       if @browser.div(:id => 'views_con_1').present?
-        @browser.div(:id => 'views_con_1').tbody.trs.each do |row|
-          puts row
-          if row.ths.size > 0
-            mapped_books.push map_row(row)
+        @browser.div(:id => 'views_con_1').tbodys.each do |tbody|
+          tbody.trs.each do |row|
+            if row.ths.size > 0
+              mapped_books.push map_row(row)
+            end
           end
         end
       end
@@ -39,6 +40,7 @@ class XiaoshuoMapper < BaseMapper
 
     mapped_books.each do |book|
       yield book
+      puts book
     end
 
     if @page_handler

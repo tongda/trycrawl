@@ -16,6 +16,7 @@ class XiaoshuoMonthMapper < XiaoshuoMapper
       url = "#{url_base}#{index}.html"
 
       books_in_page = map_page url do |book|
+        puts @month_from
         book[:month] = @month_from
       end
 
