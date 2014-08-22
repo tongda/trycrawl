@@ -11,8 +11,10 @@ class BaseMapper
 
   def reset
     begin
-      @browser.close
-      @browser = Watir::Browser.new :phantomjs
+      unless @browser.closed?
+        @browser.close
+        @browser = Watir::Browser.new :phantomjs
+      end
     rescue
       @browser = Watir::Browser.new :phantomjs
     end

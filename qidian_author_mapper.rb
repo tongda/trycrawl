@@ -58,11 +58,18 @@ File.open("qidian_top_5000.csv", "r:utf-8") do |file|
   end
 end
 
+File.open("qidian.month.all.txt", "r:utf-8") do |file|
+  file.each_line do |line|
+    phrases = line.split "$$"
+    lvs[phrases[5].strip] = phrases[-1].strip
+  end
+end
+
 puts "#{lvs.size} authors exists"
 
 File.open("qidian.author.lv.txt", "w") do |file|
   authors.each do |name, url|
-    unless lvs.has_key? name
+    if lvs[name].empty?
       browser = Watir::Browser.new :phantomjs
       lvs[name] = lv_for browser, url
       browser.close
@@ -73,10 +80,10 @@ File.open("qidian.author.lv.txt", "w") do |file|
 end
 
 File.open("qidian.month.txt", "r:utf-8") do |file|
-  file.open("qidian.month.all.txt", "w") do |output|
+  File.open("qidian.month.all.txt", "w") do |output|
     file.each_line do |line|
       author = from_line line
-      output.puts "#{line} $$ #{lvs[author[:name]]}"
+      output.puts "#{line.strip} $$ #{lvs[author[:name]]}"
     end
   end
 end
