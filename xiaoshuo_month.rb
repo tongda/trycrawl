@@ -35,7 +35,7 @@ class XiaoshuoMonthMapper < XiaoshuoMapper
     @month_from = from
     puts to
     while @month_from < to do
-      url_base = "http://a.readnovel.com/topall/goldmedal/#{from.strftime '%Y%m'}/"
+      url_base = "http://a.readnovel.com/topall/goldmedal/#{@month_from.strftime '%Y%m'}/"
 
       books = map_month url_base
 
