@@ -31,7 +31,7 @@ def lv_for(browser, url, times = 0)
   rescue Exception => e
     puts e.message
     puts "#{url} retrying"
-    if times < 2
+    if times < 1
       return lv_for(browser, url, times + 1)
     else
       puts "#{url} give up"
@@ -86,9 +86,14 @@ puts "#{given_ups.size} given up"
 File.open("qidian.author.lv.txt", "w") do |file|
   authors.each do |name, url|
     if lvs[name].empty? && !(given_ups.has_key? url)
-      browser = Watir::Browser.new :phantomjs
-      lvs[name] = lv_for browser, url
-      browser.close
+      begin
+        browser = Watir::Browser.new :phantomjs
+        browser.driver.manage.timeouts.implicit_wait = 10
+        lvs[name] = lv_for browser, url
+        browser.close
+      rescue Exception => e
+        puts e.message
+      end
     end
     puts "#{name} #{lvs[name]}"
     file.puts "#{name} $$ #{lvs[name]}"
