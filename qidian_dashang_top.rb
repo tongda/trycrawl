@@ -14,12 +14,13 @@ end
 
 def open_browser(times = 0, &p)
   browser = Watir::Browser.new :phantomjs
+  browser.driver.manage.timeouts.implicit_wait = 5
   begin
     p.call browser
   rescue Exception => e
     puts e.message
 
-    if times < 1
+    if times < 0
       times += 1
       puts "retry for #{times} times"
       open_browser times do
@@ -36,7 +37,7 @@ def map_page(book)
   open_browser do |br|
     br.goto book[:url]
     br.link(:id => 'hdtabs02').hover
-    br.div(:id => 'award').when_present 5 do
+    br.div(:id => 'award').when_present 2 do
       t = br.div(:id => 'award').div(:class => "ballot_data").text
       puts t
       parts = t.split '  '
