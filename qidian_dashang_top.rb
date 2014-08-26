@@ -29,9 +29,8 @@ def open_browser(times = 0, &p)
     else
       puts "give up"
     end
-  else
-    browser.close
   end
+  browser.close
 end
 
 def map_page(book)
