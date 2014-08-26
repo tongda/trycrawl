@@ -14,7 +14,7 @@ end
 
 def open_browser(times = 0, &p)
   browser = Watir::Browser.new :phantomjs
-  browser.driver.manage.timeouts.implicit_wait = 3
+  browser.driver.manage.timeouts.implicit_wait = 5
   begin
     p.call browser
   rescue Exception => e
