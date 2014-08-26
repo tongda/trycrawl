@@ -14,15 +14,15 @@ end
 
 def open_browser(times = 0, &p)
   browser = Watir::Browser.new :phantomjs
+  browser.driver.manage.timeouts.implicit_wait = 3
   begin
     p.call browser
   rescue Exception => e
     puts e.message
 
-    times += 1
-    puts "retry for #{times} times"
-
-    if times < 2
+    if times < 1
+      times += 1
+      puts "retry for #{times} times"
       open_browser times do
         p.call browser
       end
