@@ -20,7 +20,7 @@ def open_browser(times = 0, &p)
   rescue Exception => e
     puts e.message
 
-    if times < 0
+    if times < 1
       times += 1
       puts "retry for #{times} times"
       open_browser times do
@@ -37,7 +37,7 @@ def map_page(book)
   open_browser do |br|
     br.goto book[:url]
     br.link(:id => 'hdtabs02').hover
-    br.div(:id => 'award').when_present 2 do
+    br.div(:id => 'award').when_present 5 do
       t = br.div(:id => 'award').div(:class => "ballot_data").text
       puts t
       parts = t.split '  '
