@@ -63,7 +63,7 @@ File.open "qidian_top5000.csv", 'r:utf-8' do |in_file|
         puts "processing line: #{line}"
         map_page book do |b|
           result = "#{b[:rank]},#{b[:name]},#{b[:url]},#{b[:ds_time].to_s},#{b[:ds_week]},#{b[:ds_day]}"
-          out_file.puts line
+          out_file.puts result
           puts result
         end
       end
